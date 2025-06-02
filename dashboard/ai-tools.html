@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات الذكاء الاصطناعي - Vertex AI</title>
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard" id="dashboard-container" style="display: none;">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="../images/vertex_ai_logo.png" alt="Vertex AI Logo">
+                <div>
+                    <div class="logo-text">Vertex AI</div>
+                </div>
+                <button class="sidebar-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="sidebar-user">
+                <div class="sidebar-user-avatar">
+                    <span id="user-initial">S</span>
+                </div>
+                <div>
+                    <div class="sidebar-user-name" id="user-name">s7x</div>
+                    <div class="sidebar-user-role">مدير النظام</div>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-title">القائمة الرئيسية</div>
+                <ul class="sidebar-menu-items">
+                    <li class="sidebar-menu-item">
+                        <a href="index.html" class="sidebar-menu-link">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>لوحة التحكم</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="ai-tools.html" class="sidebar-menu-link active">
+                            <i class="fas fa-robot"></i>
+                            <span>أدوات الذكاء الاصطناعي</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="#" class="sidebar-menu-link">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>المشاريع</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="#" class="sidebar-menu-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>التحليلات</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-title">الإدارة</div>
+                <ul class="sidebar-menu-items">
+                    <li class="sidebar-menu-item">
+                        <a href="#" class="sidebar-menu-link">
+                            <i class="fas fa-users"></i>
+                            <span>العملاء</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="#" class="sidebar-menu-link">
+                            <i class="fas fa-cog"></i>
+                            <span>الإعدادات</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <a href="#" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>تسجيل الخروج</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="dashboard-header">
+                <div class="dashboard-title">
+                    <h1>أدوات الذكاء الاصطناعي</h1>
+                    <p>استخدم أدوات الذكاء الاصطناعي لتعزيز مشروعك</p>
+                </div>
+                <div class="dashboard-actions">
+                    <div class="dashboard-action">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="dashboard-action">
+                        <i class="fas fa-envelope"></i>
+                        <span class="badge">5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="ai-content-generator">
+                    <div class="content-form">
+                        <h2 class="mb-3">توليد المحتوى الذكي</h2>
+                        <div class="form-group">
+                            <label for="content-type">نوع المحتوى</label>
+                            <select id="content-type" class="form-control">
+                                <option value="blog">مقال مدونة</option>
+                                <option value="social">منشور وسائل التواصل الاجتماعي</option>
+                                <option value="email">رسالة بريد إلكتروني</option>
+                                <option value="ad">إعلان</option>
+                                <option value="product">وصف منتج</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="content-topic">الموضوع</label>
+                            <input type="text" id="content-topic" placeholder="أدخل موضوع المحتوى">
+                        </div>
+                        <div class="form-group">
+                            <label for="content-keywords">الكلمات المفتاحية (اختياري)</label>
+                            <input type="text" id="content-keywords" placeholder="أدخل الكلمات المفتاحية مفصولة بفواصل">
+                        </div>
+                        <div class="form-group">
+                            <label>نبرة المحتوى</label>
+                            <div class="tone-options">
+                                <div class="tone-option" data-tone="professional">احترافية</div>
+                                <div class="tone-option active" data-tone="conversational">ودية</div>
+                                <div class="tone-option" data-tone="persuasive">إقناعية</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>طول المحتوى</label>
+                            <div class="length-options">
+                                <div class="length-option" data-length="short">قصير</div>
+                                <div class="length-option active" data-length="medium">متوسط</div>
+                                <div class="length-option" data-length="long">طويل</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="content-instructions">تعليمات إضافية (اختياري)</label>
+                            <textarea id="content-instructions" placeholder="أدخل أي تعليمات إضافية للذكاء الاصطناعي"></textarea>
+                        </div>
+                        <button id="generate-content" class="btn btn-primary">توليد المحتوى</button>
+                    </div>
+                    <div class="templates-sidebar">
+                        <h3 class="templates-title">قوالب جاهزة</h3>
+                        <div class="templates-list">
+                            <div class="template-item" data-template="blog-tech">
+                                <h4>مقال تقني</h4>
+                                <p>قالب لكتابة مقال تقني يشرح مفاهيم معقدة بطريقة مبسطة.</p>
+                            </div>
+                            <div class="template-item" data-template="social-promo">
+                                <h4>منشور ترويجي</h4>
+                                <p>قالب لكتابة منشور ترويجي جذاب لمنتج أو خدمة.</p>
+                            </div>
+                            <div class="template-item" data-template="email-newsletter">
+                                <h4>نشرة إخبارية</h4>
+                                <p>قالب لكتابة نشرة إخبارية أسبوعية أو شهرية.</p>
+                            </div>
+                            <div class="template-item" data-template="product-description">
+                                <h4>وصف منتج</h4>
+                                <p>قالب لكتابة وصف منتج جذاب ومقنع.</p>
+                            </div>
+                            <div class="template-item" data-template="ad-copy">
+                                <h4>نص إعلاني</h4>
+                                <p>قالب لكتابة نص إعلاني قصير وفعال.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-preview" id="content-preview" style="display: none;">
+                    <div class="content-preview-header">
+                        <h3 class="content-preview-title">معاينة المحتوى</h3>
+                        <div class="content-preview-actions">
+                            <div class="content-preview-action" title="نسخ">
+                                <i class="fas fa-copy"></i>
+                            </div>
+                            <div class="content-preview-action" title="تحرير">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="content-preview-action" title="تنزيل">
+                                <i class="fas fa-download"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-preview-body">
+                        <div id="content-result">
+                            <div class="loading-spinner" id="loading-spinner" style="display: none;"></div>
+                            <div id="content-text"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-history">
+                    <div class="dashboard-section-header">
+                        <h2 class="dashboard-section-title">سجل المحتوى</h2>
+                        <a href="#" class="dashboard-section-action">
+                            عرض الكل <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                    <div class="history-list">
+                        <div class="history-item">
+                            <div class="history-item-header">
+                                <div>
+                                    <h3 class="history-item-title">مقال عن فوائد الذكاء الاصطناعي للشركات الصغيرة</h3>
+                                    <div class="history-item-meta">
+                                        <span>مقال مدونة</span> • <span>1 يونيو 2025</span>
+                                    </div>
+                                </div>
+                                <div class="history-item-actions">
+                                    <div class="history-item-action" title="عرض">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <div class="history-item-action" title="تحرير">
+                                        <i class="fas fa-edit"></i>
+                                    </div>
+                                    <div class="history-item-action" title="حذف">
+                                        <i class="fas fa-trash"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-item-header">
+                                <div>
+                                    <h3 class="history-item-title">منشور ترويجي للخدمات الجديدة</h3>
+                                    <div class="history-item-meta">
+                                        <span>منشور وسائل التواصل الاجتماعي</span> • <span>31 مايو 2025</span>
+                                    </div>
+                                </div>
+                                <div class="history-item-actions">
+                                    <div class="history-item-action" title="عرض">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <div class="history-item-action" title="تحرير">
+                                        <i class="fas fa-edit"></i>
+                                    </div>
+                                    <div class="history-item-action" title="حذف">
+                                        <i class="fas fa-trash"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-redirect" class="login-page" style="display: none;">
+        <div class="login-container animate-fade-in">
+            <div class="login-logo">
+                <img src="../images/vertex_ai_logo.png" alt="Vertex AI Logo">
+                <div class="logo-text">Vertex AI</div>
+                <div class="logo-subtext">Agent Builder</div>
+            </div>
+            <h2 class="login-title">يجب تسجيل الدخول</h2>
+            <p class="text-center">يجب عليك تسجيل الدخول للوصول إلى لوحة التحكم.</p>
+            <a href="../login.html" class="btn btn-primary mt-3" style="display: block;">الذهاب إلى صفحة تسجيل الدخول</a>
+        </div>
+    </div>
+
+    <script>
+        // التحقق من حالة تسجيل الدخول
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('vertexLoggedIn') === 'true';
+            const username = localStorage.getItem('vertexUsername');
+            
+            if (isLoggedIn && username) {
+                // عرض لوحة التحكم
+                document.getElementById('dashboard-container').style.display = 'flex';
+                document.getElementById('login-redirect').style.display = 'none';
+                
+                // تعيين اسم المستخدم
+                document.getElementById('user-name').textContent = username;
+                
+                // تعيين الحرف الأول من اسم المستخدم
+                document.getElementById('user-initial').textContent = username.charAt(0).toUpperCase();
+            } else {
+                // عرض صفحة إعادة التوجيه
+                document.getElementById('dashboard-container').style.display = 'none';
+                document.getElementById('login-redirect').style.display = 'flex';
+            }
+        });
+        
+        // تسجيل الخروج
+        document.getElementById('logout-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // حذف بيانات تسجيل الدخول
+            localStorage.removeItem('vertexLoggedIn');
+            localStorage.removeItem('vertexUsername');
+            
+            // إعادة التوجيه إلى صفحة تسجيل الدخول
+            window.location.href = '../login.html';
+        });
+        
+        // Mobile Sidebar Toggle
+        const sidebarClose = document.querySelector('.sidebar-close');
+        
+        sidebarClose.addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+
+        // Tone Options
+        const toneOptions = document.querySelectorAll('.tone-option');
+        
+        toneOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                toneOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Length Options
+        const lengthOptions = document.querySelectorAll('.length-option');
+        
+        lengthOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                lengthOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Template Selection
+        const templateItems = document.querySelectorAll('.template-item');
+        
+        templateItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const template = this.getAttribute('data-template');
+                
+                // تعبئة النموذج بناءً على القالب المحدد
+                switch(template) {
+                    case 'blog-tech':
+                        document.getElementById('content-type').value = 'blog';
+                        document.getElementById('content-topic').value = 'أحدث تقنيات الذكاء الاصطناعي';
+                        document.getElementById('content-keywords').value = 'ذكاء اصطناعي، تقنية، ابتكار، مستقبل';
+                        document.querySelector('.tone-option[data-tone="professional"]').click();
+                        document.querySelector('.length-option[data-length="long"]').click();
+                        break;
+                    case 'social-promo':
+                        document.getElementById('content-type').value = 'social';
+                        document.getElementById('content-topic').value = 'الترويج لخدمات الذكاء الاصطناعي';
+                        document.getElementById('content-keywords').value = 'عرض، خصم، ذكاء اصطناعي، تطوير الأعمال';
+                        document.querySelector('.tone-option[data-tone="persuasive"]').click();
+                        document.querySelector('.length-option[data-length="short"]').click();
+                        break;
+                    case 'email-newsletter':
+                        document.getElementById('content-type').value = 'email';
+                        document.getElementById('content-topic').value = 'نشرة إخبارية شهرية عن تطورات الذكاء الاصطناعي';
+                        document.getElementById('content-keywords').value = 'أخبار، تحديثات، ذكاء اصطناعي، تقنية';
+                        document.querySelector('.tone-option[data-tone="conversational"]').click();
+                        document.querySelector('.length-option[data-length="medium"]').click();
+                        break;
+                    case 'product-description':
+                        document.getElementById('content-type').value = 'product';
+                        document.getElementById('content-topic').value = 'وصف نظام ذكي لإدارة المشاريع';
+                        document.getElementById('content-keywords').value = 'إدارة مشاريع، ذكاء اصطناعي، إنتاجية، كفاءة';
+                        document.querySelector('.tone-option[data-tone="persuasive"]').click();
+                        document.querySelector('.length-option[data-length="medium"]').click();
+                        break;
+                    case 'ad-copy':
+                        document.getElementById('content-type').value = 'ad';
+                        document.getElementById('content-topic').value = 'إعلان عن خدمات الذكاء الاصطناعي';
+                        document.getElementById('content-keywords').value = 'ذكاء اصطناعي، تطوير الأعمال، نمو، تحسين';
+                        document.querySelector('.tone-option[data-tone="persuasive"]').click();
+                        document.querySelector('.length-option[data-length="short"]').click();
+                        break;
+                }
+            });
+        });
+
+        // Generate Content
+        document.getElementById('generate-content').addEventListener('click', function() {
+            const contentType = document.getElementById('content-type').value;
+            const contentTopic = document.getElementById('content-topic').value;
+            const contentKeywords = document.getElementById('content-keywords').value;
+            const contentInstructions = document.getElementById('content-instructions').value;
+            const contentTone = document.querySelector('.tone-option.active').getAttribute('data-tone');
+            const contentLength = document.querySelector('.length-option.active').getAttribute('data-length');
+            
+            // التحقق من إدخال الموضوع
+            if (!contentTopic) {
+                alert('يرجى إدخال موضوع المحتوى');
+                return;
+            }
+            
+            // عرض المعاينة والتحميل
+            document.getElementById('content-preview').style.display = 'block';
+            document.getElementById('loading-spinner').style.display = 'block';
+            document.getElementById('content-text').innerHTML = '';
+            
+            // محاكاة توليد المحتوى (في التطبيق الحقيقي، سيتم استدعاء API)
+            setTimeout(function() {
+                document.getElementById('loading-spinner').style.display = 'none';
+                
+                let generatedContent = '';
+                
+                switch(contentType) {
+                    case 'blog':
+                        generatedContent = `
+                            <h3>${contentTopic}</h3>
+                            <p>في عالم يتطور بسرعة كبيرة، أصبح الذكاء الاصطناعي أحد أهم التقنيات التي تشكل مستقبل الأعمال والصناعات المختلفة. تقدم هذه التقنية فرصاً هائلة للشركات لتحسين عملياتها وزيادة كفاءتها وتقديم تجارب أفضل لعملائها.</p>
+                            <p>من خلال الاستفادة من قوة الذكاء الاصطناعي، يمكن للشركات تحليل كميات هائلة من البيانات واستخراج رؤى قيمة تساعدها على اتخاذ قرارات أفضل وأكثر ذكاءً. كما يمكن للذكاء الاصطناعي أتمتة العمليات المتكررة وتوفير الوقت والجهد، مما يسمح للموظفين بالتركيز على المهام الأكثر أهمية وإبداعاً.</p>
+                            <p>في هذا المقال، سنستكشف كيف يمكن للشركات الاستفادة من تقنيات الذكاء الاصطناعي لتعزيز نموها وتحقيق ميزة تنافسية في السوق.</p>
+                        `;
+                        break;
+                    case 'social':
+                        generatedContent = `
+                            <h3>🚀 أطلق العنان لإمكانيات مشروعك مع Vertex AI!</h3>
+                            <p>هل تبحث عن طريقة لتعزيز نمو مشروعك وزيادة كفاءته؟ نظام Vertex AI الذكي هو الحل الأمثل لك! استفد من قوة الذكاء الاصطناعي لتحليل بياناتك، أتمتة عملياتك، وتحسين تجربة عملائك.</p>
+                            <p>احصل على تجربة مجانية لمدة 7 أيام واكتشف كيف يمكن لنظام Vertex AI الذكي تغيير طريقة عملك للأفضل! 💯</p>
+                            <p>#VertexAI #ذكاء_اصطناعي #تطوير_الأعمال</p>
+                        `;
+                        break;
+                    case 'email':
+                        generatedContent = `
+                            <h3>نشرة Vertex AI الشهرية - يونيو 2025</h3>
+                            <p>مرحباً بك في نشرة Vertex AI الشهرية!</p>
+                            <p>نأمل أن تكون بخير وأن يكون مشروعك في تقدم مستمر. في هذا الشهر، لدينا العديد من التحديثات والأخبار المثيرة لمشاركتها معك:</p>
+                            <ul>
+                                <li>أطلقنا أداة جديدة لتوليد المحتوى الذكي تساعدك على إنشاء محتوى عالي الجودة بسرعة وسهولة.</li>
+                                <li>قمنا بتحسين نظام التحليلات لتوفير رؤى أكثر دقة وعمقاً حول أداء مشروعك.</li>
+                                <li>أضفنا المزيد من القوالب الجاهزة لمساعدتك على بدء مشاريعك بسرعة أكبر.</li>
+                            </ul>
+                            <p>لا تتردد في التواصل معنا إذا كان لديك أي أسئلة أو استفسارات. نحن هنا لمساعدتك!</p>
+                            <p>مع أطيب التحيات،<br>فريق Vertex AI</p>
+                        `;
+                        break;
+                    case 'ad':
+                        generatedContent = `
+                            <h3>حول مشروعك إلى نظام ذكي مع Vertex AI!</h3>
+                            <p>🔥 عرض خاص: احصل على خصم 20% عند الاشتراك في باقة Pro لمدة سنة! 🔥</p>
+                            <p>لا تفوت هذه الفرصة لتعزيز نمو مشروعك وزيادة أرباحك. اشترك الآن!</p>
+                        `;
+                        break;
+                    case 'product':
+                        generatedContent = `
+                            <h3>نظام Vertex AI الذكي لإدارة المشاريع</h3>
+                            <p>نظام متكامل يجمع بين قوة الذكاء الاصطناعي وسهولة الاستخدام لمساعدتك على إدارة مشاريعك بكفاءة وفعالية غير مسبوقة.</p>
+                            <p>المميزات الرئيسية:</p>
+                            <ul>
+                                <li>لوحة تحكم ذكية مخصصة حسب احتياجاتك</li>
+                                <li>أدوات ذكاء اصطناعي متكاملة لتحليل البيانات واتخاذ القرارات</li>
+                                <li>نظام أتمتة متقدم لتوفير الوقت والجهد</li>
+                                <li>تقارير وتحليلات مفصلة لمتابعة أداء مشروعك</li>
+                                <li>دعم فني على مدار الساعة</li>
+                            </ul>
+                            <p>مع نظام Vertex AI الذكي، ستتمكن من تحقيق أهدافك بسرعة وكفاءة أكبر، وستوفر الوقت والجهد لتركز على تطوير مشروعك وتحقيق النجاح.</p>
+                        `;
+                        break;
+                }
+                
+                document.getElementById('content-text').innerHTML = generatedContent;
+                
+                // التمرير إلى المعاينة
+                document.getElementById('content-preview').scrollIntoView({ behavior: 'smooth' });
+            }, 2000);
+        });
+
+        // Copy Content
+        document.querySelector('.content-preview-action[title="نسخ"]').addEventListener('click', function() {
+            const contentText = document.getElementById('content-text').innerText;
+            
+            // نسخ النص إلى الحافظة
+            navigator.clipboard.writeText(contentText).then(function() {
+                alert('تم نسخ المحتوى بنجاح!');
+            }, function() {
+                alert('فشل نسخ المحتوى');
+            });
+        });
+    </script>
+</body>
+</html>

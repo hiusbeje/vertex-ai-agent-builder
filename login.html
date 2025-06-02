@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - Vertex AI</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-shape login-shape-1"></div>
+        <div class="login-shape login-shape-2"></div>
+        <div class="login-container animate-fade-in">
+            <div class="login-logo">
+                <img src="images/vertex_ai_logo.png" alt="Vertex AI Logo">
+                <div class="logo-text">Vertex AI</div>
+                <div class="logo-subtext">Agent Builder</div>
+            </div>
+            <h2 class="login-title">تسجيل الدخول إلى لوحة التحكم</h2>
+            <div id="login-error" class="login-error" style="display: none;">
+                بيانات الدخول غير صحيحة، يرجى المحاولة مرة أخرى.
+            </div>
+            <form class="login-form" id="login-form">
+                <div class="form-group">
+                    <label for="username">اسم المستخدم</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">كلمة المرور</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-footer">
+                    <a href="#">نسيت كلمة المرور؟</a>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">تسجيل الدخول</button>
+            </form>
+            <p class="text-center mt-3">
+                ليس لديك حساب؟ <a href="contact.html">تواصل معنا</a> للحصول على حساب.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // التحقق من بيانات الدخول
+            if (username === 's7x' && password === '2008.11.26') {
+                // تخزين حالة تسجيل الدخول في localStorage
+                localStorage.setItem('vertexLoggedIn', 'true');
+                localStorage.setItem('vertexUsername', username);
+                
+                // التوجيه إلى لوحة التحكم
+                window.location.href = 'dashboard/index.html';
+            } else {
+                // عرض رسالة الخطأ
+                document.getElementById('login-error').style.display = 'block';
+                
+                // إخفاء رسالة الخطأ بعد 3 ثوانٍ
+                setTimeout(function() {
+                    document.getElementById('login-error').style.display = 'none';
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>

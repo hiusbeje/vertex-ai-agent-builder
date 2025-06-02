@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - Vertex AI</title>
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="dashboard" id="dashboard-container" style="display: none;">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="../images/vertex_ai_logo.png" alt="Vertex AI Logo">
+                <div>
+                    <div class="logo-text">Vertex AI</div>
+                </div>
+                <button class="sidebar-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="sidebar-user">
+                <div class="sidebar-user-avatar">
+                    <span id="user-initial">S</span>
+                </div>
+                <div>
+                    <div class="sidebar-user-name" id="user-name">s7x</div>
+                    <div class="sidebar-user-role">مدير النظام</div>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-title">القائمة الرئيسية</div>
+                <ul class="sidebar-menu-items">
+                    <li class="sidebar-menu-item">
+                        <a href="index.html" class="sidebar-menu-link active">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>لوحة التحكم</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="ai-tools.html" class="sidebar-menu-link">
+                            <i class="fas fa-robot"></i>
+                            <span>أدوات الذكاء الاصطناعي</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="#" class="sidebar-menu-link">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>المشاريع</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="#" class="sidebar-menu-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>التحليلات</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-title">الإدارة</div>
+                <ul class="sidebar-menu-items">
+                    <li class="sidebar-menu-item">
+                        <a href="#" class="sidebar-menu-link">
+                            <i class="fas fa-users"></i>
+                            <span>العملاء</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <a href="#" class="sidebar-menu-link">
+                            <i class="fas fa-cog"></i>
+                            <span>الإعدادات</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <a href="#" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>تسجيل الخروج</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="dashboard-header">
+                <div class="dashboard-title">
+                    <h1>لوحة التحكم</h1>
+                    <p>مرحباً بك في نظام Vertex AI الذكي</p>
+                </div>
+                <div class="dashboard-actions">
+                    <div class="dashboard-action">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="dashboard-action">
+                        <i class="fas fa-envelope"></i>
+                        <span class="badge">5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="dashboard-welcome">
+                    <div class="dashboard-welcome-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="dashboard-welcome-content">
+                        <h2>مرحباً بك، <span id="welcome-user-name">s7x</span>!</h2>
+                        <p>هذه لوحة التحكم الذكية الخاصة بك. يمكنك من هنا إدارة مشاريعك، استخدام أدوات الذكاء الاصطناعي، ومتابعة أداء نظامك.</p>
+                        <div class="dashboard-welcome-actions">
+                            <a href="ai-tools.html" class="btn btn-primary">استخدام أدوات الذكاء الاصطناعي</a>
+                            <a href="#" class="btn btn-secondary">استكشاف المزيد</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">الزيارات</div>
+                            <div class="stat-icon blue">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value">1,254</div>
+                        <div class="stat-change positive">
+                            <span>+12.5%</span>
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="stat-progress">
+                            <div class="stat-progress-bar blue" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">التحويلات</div>
+                            <div class="stat-icon green">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value">42</div>
+                        <div class="stat-change positive">
+                            <span>+8.3%</span>
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="stat-progress">
+                            <div class="stat-progress-bar green" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">المبيعات</div>
+                            <div class="stat-icon purple">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value">$8,540</div>
+                        <div class="stat-change positive">
+                            <span>+5.2%</span>
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="stat-progress">
+                            <div class="stat-progress-bar purple" style="width: 45%;"></div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">معدل التفاعل</div>
+                            <div class="stat-icon yellow">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value">68%</div>
+                        <div class="stat-change negative">
+                            <span>-2.1%</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="stat-progress">
+                            <div class="stat-progress-bar yellow" style="width: 68%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <div class="dashboard-section-header">
+                        <h2 class="dashboard-section-title">أدوات الذكاء الاصطناعي</h2>
+                        <a href="ai-tools.html" class="dashboard-section-action">
+                            عرض الكل <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-icon blue">
+                                <i class="fas fa-pen"></i>
+                            </div>
+                            <h3 class="tool-title">توليد المحتوى</h3>
+                            <p class="tool-description">إنشاء محتوى عالي الجودة لمدونتك، وسائل التواصل الاجتماعي، أو موقعك الإلكتروني.</p>
+                            <a href="ai-tools.html" class="btn btn-primary">استخدام الأداة</a>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon green">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h3 class="tool-title">تحليل البيانات</h3>
+                            <p class="tool-description">تحليل بياناتك واستخراج رؤى قيمة تساعدك على اتخاذ قرارات أفضل لمشروعك.</p>
+                            <a href="#" class="btn btn-primary">استخدام الأداة</a>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-icon purple">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3 class="tool-title">أتمتة العمليات</h3>
+                            <p class="tool-description">أتمتة العمليات المتكررة وتوفير الوقت والجهد من خلال سير عمل ذكي.</p>
+                            <a href="#" class="btn btn-primary">استخدام الأداة</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <div class="dashboard-section-header">
+                        <h2 class="dashboard-section-title">المشاريع النشطة</h2>
+                        <a href="#" class="dashboard-section-action">
+                            عرض الكل <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3 class="project-title">تطوير موقع الويب</h3>
+                                <span class="project-status active">نشط</span>
+                            </div>
+                            <p class="project-description">تطوير موقع ويب احترافي باستخدام أحدث التقنيات وأفضل الممارسات.</p>
+                            <div class="project-progress">
+                                <div class="project-progress-header">
+                                    <span class="project-progress-label">التقدم</span>
+                                    <span class="project-progress-value">75%</span>
+                                </div>
+                                <div class="project-progress-bar">
+                                    <div class="project-progress-fill" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-team">
+                                    <div class="project-team-member">أ</div>
+                                    <div class="project-team-member">م</div>
+                                    <div class="project-team-member">س</div>
+                                </div>
+                                <div class="project-deadline">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>15 يونيو 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3 class="project-title">حملة تسويقية</h3>
+                                <span class="project-status active">نشط</span>
+                            </div>
+                            <p class="project-description">إطلاق حملة تسويقية شاملة لزيادة الوعي بالعلامة التجارية وجذب عملاء جدد.</p>
+                            <div class="project-progress">
+                                <div class="project-progress-header">
+                                    <span class="project-progress-label">التقدم</span>
+                                    <span class="project-progress-value">45%</span>
+                                </div>
+                                <div class="project-progress-bar">
+                                    <div class="project-progress-fill" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-team">
+                                    <div class="project-team-member">ر</div>
+                                    <div class="project-team-member">ن</div>
+                                </div>
+                                <div class="project-deadline">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>30 يونيو 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3 class="project-title">تطوير تطبيق</h3>
+                                <span class="project-status pending">قيد الإعداد</span>
+                            </div>
+                            <p class="project-description">تطوير تطبيق جوال متكامل لتحسين تجربة المستخدم وزيادة التفاعل.</p>
+                            <div class="project-progress">
+                                <div class="project-progress-header">
+                                    <span class="project-progress-label">التقدم</span>
+                                    <span class="project-progress-value">10%</span>
+                                </div>
+                                <div class="project-progress-bar">
+                                    <div class="project-progress-fill" style="width: 10%;"></div>
+                                </div>
+                            </div>
+                            <div class="project-footer">
+                                <div class="project-team">
+                                    <div class="project-team-member">ع</div>
+                                    <div class="project-team-member">ح</div>
+                                    <div class="project-team-member">ط</div>
+                                </div>
+                                <div class="project-deadline">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>15 أغسطس 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <div class="dashboard-section-header">
+                        <h2 class="dashboard-section-title">سير العمل الآلي</h2>
+                        <a href="#" class="dashboard-section-action">
+                            إضافة سير عمل جديد <i class="fas fa-plus"></i>
+                        </a>
+                    </div>
+                    <div class="workflows-list">
+                        <div class="workflow-card">
+                            <div class="workflow-header">
+                                <div class="workflow-info">
+                                    <div class="workflow-icon blue">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="workflow-title">إرسال رسائل البريد الإلكتروني التلقائية</h3>
+                                        <p class="workflow-description">إرسال رسائل بريد إلكتروني ترحيبية للعملاء الجدد تلقائياً.</p>
+                                    </div>
+                                </div>
+                                <label class="workflow-toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="workflow-toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="workflow-footer">
+                                <span>آخر تشغيل: اليوم</span>
+                                <span>عدد التشغيلات: 24</span>
+                                <span>الحالة: نشط</span>
+                            </div>
+                        </div>
+                        <div class="workflow-card">
+                            <div class="workflow-header">
+                                <div class="workflow-info">
+                                    <div class="workflow-icon green">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="workflow-title">تقارير أسبوعية</h3>
+                                        <p class="workflow-description">إنشاء وإرسال تقارير أسبوعية عن أداء المشروع تلقائياً.</p>
+                                    </div>
+                                </div>
+                                <label class="workflow-toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="workflow-toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="workflow-footer">
+                                <span>آخر تشغيل: قبل 3 أيام</span>
+                                <span>عدد التشغيلات: 12</span>
+                                <span>الحالة: نشط</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-redirect" class="login-page" style="display: none;">
+        <div class="login-container animate-fade-in">
+            <div class="login-logo">
+                <img src="../images/vertex_ai_logo.png" alt="Vertex AI Logo">
+                <div class="logo-text">Vertex AI</div>
+                <div class="logo-subtext">Agent Builder</div>
+            </div>
+            <h2 class="login-title">يجب تسجيل الدخول</h2>
+            <p class="text-center">يجب عليك تسجيل الدخول للوصول إلى لوحة التحكم.</p>
+            <a href="../login.html" class="btn btn-primary mt-3" style="display: block;">الذهاب إلى صفحة تسجيل الدخول</a>
+        </div>
+    </div>
+
+    <script>
+        // التحقق من حالة تسجيل الدخول
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('vertexLoggedIn') === 'true';
+            const username = localStorage.getItem('vertexUsername');
+            
+            if (isLoggedIn && username) {
+                // عرض لوحة التحكم
+                document.getElementById('dashboard-container').style.display = 'flex';
+                document.getElementById('login-redirect').style.display = 'none';
+                
+                // تعيين اسم المستخدم
+                document.getElementById('user-name').textContent = username;
+                document.getElementById('welcome-user-name').textContent = username;
+                
+                // تعيين الحرف الأول من اسم المستخدم
+                document.getElementById('user-initial').textContent = username.charAt(0).toUpperCase();
+            } else {
+                // عرض صفحة إعادة التوجيه
+                document.getElementById('dashboard-container').style.display = 'none';
+                document.getElementById('login-redirect').style.display = 'flex';
+            }
+        });
+        
+        // تسجيل الخروج
+        document.getElementById('logout-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // حذف بيانات تسجيل الدخول
+            localStorage.removeItem('vertexLoggedIn');
+            localStorage.removeItem('vertexUsername');
+            
+            // إعادة التوجيه إلى صفحة تسجيل الدخول
+            window.location.href = '../login.html';
+        });
+        
+        // Mobile Sidebar Toggle
+        const sidebarClose = document.querySelector('.sidebar-close');
+        
+        sidebarClose.addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
